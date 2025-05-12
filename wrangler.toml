@@ -1,0 +1,19 @@
+name = "telegram-recurring-post-bot"
+main = "index.js"
+compatibility_date = "2023-05-18"
+
+# Run every minute to check for scheduled messages
+[triggers]
+crons = ["* * * * *"]
+
+# Variable bindings
+[vars]
+CHAT_ID = "YOUR_CHAT_ID_HERE"
+
+# KV namespace for storing templates
+[[kv_namespaces]]
+binding = "BOT_TEMPLATES"
+id = "YOUR_KV_NAMESPACE_ID" # You'll get this when you create the KV namespace
+
+# To create the KV namespace, run:
+# wrangler kv:namespace create "BOT_TEMPLATES"
